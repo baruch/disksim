@@ -37,8 +37,8 @@ all:
 	$(MAKE) -C libddbg
 	$(MAKE) -C libparam
 	$(MAKE) -C diskmodel
-	$(MAKE) -C memsmodel
 	$(MAKE) -C src
+	$(MAKE) -C memsmodel
 	$(MAKE) -C diskmodel/layout_g4_tools
         # If dixtrac is included, build it with the distribution
 	if [ -d dixtrac ]; then $(MAKE) -C dixtrac ; fi

@@ -32,6 +32,7 @@
 
 PARAM MODULE mems
 HEADER \#include "../mems_global.h"
+HEADER \#include "../src/modules/disksim_ioqueue_param.h"
 RESTYPE struct mems *
 PROTO struct mems *memsmodel_mems_loadparams(struct lp_block *b, int *num);
 
