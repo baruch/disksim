@@ -254,7 +254,7 @@ st_pbn(struct dm_disk_if *d,
 }
 
 
-static void
+static dm_ptol_result_t
 track_boundaries(struct dm_disk_if *d,
 		 struct dm_pbn *p,
 		 int *l1,
@@ -283,6 +283,9 @@ track_boundaries(struct dm_disk_if *d,
       *l2 = d->layout->dm_translate_ptol(d, &p2, remapsector);
     } while((*l2 == DM_NX) && p2.sector);
   }
+
+  // TODO: Is it really always ok? Need to check.
+  return DM_OK;
 }
 
 static dm_angle_t
