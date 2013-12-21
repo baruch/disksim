@@ -121,8 +121,8 @@ void ddbg_assert_printmsg(const char *fmt, ...);
 
 /* like assert() modulo above */
 #ifndef _DDBG_DISABLE_ASSERTIONS
-#define ddbg_assert(cond) do { int _ltassert_cond = (int)(cond); \
-if(!_ltassert_cond) { \
+#define ddbg_assert(cond) do { \
+if(!(cond)) { \
 ddbg_assert_msg(__FILE__, __LINE__, #cond, __func__, ""); \
 ddbg_assert_fail(__FILE__, __LINE__, #cond, __func__, ""); \
 } } while(0)
@@ -132,8 +132,8 @@ ddbg_assert_fail(__FILE__, __LINE__, #cond, __func__, ""); \
 
 /* print a message */
 #ifndef _DDBG_DISABLE_ASSERTIONS
-#define ddbg_assert2(cond,fmt) do { int _ltassert_cond = (int)(cond); \
-if(!_ltassert_cond) { \
+#define ddbg_assert2(cond,fmt) do { \
+if(!(cond)) { \
 ddbg_assert_msg(__FILE__, __LINE__, #cond, __func__, fmt); \
 ddbg_assert_fail(__FILE__, __LINE__, #cond, __func__, fmt); \
 } } while(0)
@@ -147,8 +147,8 @@ ddbg_assert_fail(__FILE__, __LINE__, #cond, __func__, fmt); \
  */
 
 #ifndef _DDBG_DISABLE_ASSERTIONS
-#define ddbg_assert3(cond,msg) do { int _ltassert_cond = (int)(cond);\
-if(!_ltassert_cond) { \
+#define ddbg_assert3(cond,msg) do { \
+if(!(cond)) { \
  ddbg_assert_msg(__FILE__, __LINE__, #cond, __func__, ""); \
  ddbg_assert_printmsg msg; \
  ddbg_assert_fail(__FILE__, __LINE__, #cond, __func__, ""); \
