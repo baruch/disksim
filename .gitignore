@@ -45,3 +45,6 @@ src/disksim
 src/hplcomb
 src/rms
 src/syssim
+
+valid/*.outv
+valid/stamps
