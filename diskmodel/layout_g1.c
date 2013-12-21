@@ -1938,7 +1938,7 @@ g1_get_zone(struct dm_disk_if *d,
   struct dm_layout_g1_band *z;
 
   // check args  
-  if(z == 0) { return -1; }
+  if(result == 0) { return -1; }
   if(n < 0 || n >= l->bands_len) { return -1; }
 
   z = &l->bands[n];
