@@ -1183,7 +1183,6 @@ int *lp_override_inst(struct lp_block *spec,
 }
 
 extern void libparamparse(void);
-extern void libparamlex(void);
 
 int lp_loadfile(FILE *in, 
 		struct lp_tlt ***tlts, 

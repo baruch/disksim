@@ -382,7 +382,8 @@ char *lp_search_path(char *cwd, char *name);
 int lp_inst_list(struct lp_inst *i);
 
 int dumb_split(char *s, char **t, int *i);
-    
+
+int libparamlex(void);
 
 #ifdef __cplusplus
 }

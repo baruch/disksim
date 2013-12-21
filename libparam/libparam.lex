@@ -120,8 +120,8 @@ as as
 };
 
 <src>{string} {
-  char *dirc, *basec;
-  char *dir, *base;
+  char *dirc;
+  char *dir;
 
   // NEVER modify lp_filename; it is shared between all objects that 
   // came from that file.
@@ -134,9 +134,7 @@ as as
   lp_filename = strdup(yytext);
 
   dirc = strdup(lp_filename);
-  basec = strdup(lp_filename);
   dir = dirname(dirc);
-  base = basename(basec);
 
   paths[top_path++] = lp_cwd;
 

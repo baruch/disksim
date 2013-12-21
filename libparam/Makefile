@@ -39,7 +39,7 @@ FLEX=flex
 BISON=bison
 YACC=$(BISON)
 
-CFLAGS=-g -I$(LIBDDBG_INCL) -Wall
+CFLAGS=-g -I$(LIBDDBG_INCL) -Wall -DYY_NO_INPUT
 
 # input file parser
 lex.libparam.c:	libparam.lex libparam.tab.h libparam.h
