@@ -942,7 +942,7 @@ int lp_add_param(struct lp_param ***b, int *plen,
     /* didn't find a free slot -- double the array */
     int newlen = 2 * (*plen) + 1;
     (*b) = realloc((*b), newlen * sizeof(int *));
-    bzero((int *)(*b) + *plen, ((*plen) + 1) * sizeof(int*));
+    bzero((void*)(*b) + (*plen)*sizeof(int*), ((*plen) + 1) * sizeof(int*));
     (*b)[(*plen)] = p;
     *plen = newlen;
   }
