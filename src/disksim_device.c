@@ -143,14 +143,14 @@ void device_add(struct device_header *d, int ldevno) {
     realloc(disksim->deviceinfo->devicenames, newlen * sizeof(char *));
   bzero(disksim->deviceinfo->devicenames + c, zerocnt * sizeof(char *));
 
-  devicenos = realloc(devicenos, newlen*sizeof(int));
-  bzero(devicenos + c, zerocnt * sizeof(int));
+  devicenos = realloc(devicenos, newlen*sizeof(int*));
+  bzero(devicenos + c, zerocnt * sizeof(int*));
 
-  devicetypes = realloc(devicetypes, newlen*sizeof(int));
-  bzero(devicetypes + c, zerocnt * sizeof(int));
+  devicetypes = realloc(devicetypes, newlen*sizeof(int*));
+  bzero(devicetypes + c, zerocnt * sizeof(int*));
 
   disksim->deviceinfo->devices = realloc(disksim->deviceinfo->devices, 
-					 newlen*sizeof(int));
+					 newlen*sizeof(int*));
   bzero(disksim->deviceinfo->devices + c, zerocnt * sizeof(int));
 
   disksim->deviceinfo->devs_len = newlen;
